@@ -28,3 +28,47 @@ docker push container/app
 ```
 
 
+### CMD
+
+``` javascript
+docker run ubuntu [COMMNAD]
+
+docker run ubuntu sleep 5
+
+docker ps
+```
+
+## write command in the docker file 
+
+- docker file : ubuntu-sleeper
+```
+FROM Ubuntu
+
+CMD sleep 5
+```
+
+```javascript
+docker build ubuntu-sleeper .
+
+docker run ubuntu-sleeper
+```
+
+## entry point and cmd 
+```
+FROM uBUNTU
+
+ENTRYPOINT ["sleep"]
+
+CMD ["5"]
+```
+
+```javascript
+// overwrite the cmd in docker file
+docker run ubuntu-sleeper 5
+```
+
+In this case, if only run `docker run ubuntu-sleeper`, it will sleep 5 second.
+
+
+
+
