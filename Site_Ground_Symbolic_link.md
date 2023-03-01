@@ -17,6 +17,21 @@ Or you want to link to the folder with different name, use the command `ln -s pa
 ## final 
 If you want to unlink the folder, use the commnad `unlink folder_name`. 
 
-## site ground bare repo path to clone 
-git clone -c"core.sshCommand=ssh -i ./your-ssh-key" ssh://u2-cwxucau2m03r@ssh.eyesiteview.uk:18765/home/u2-cwxucau2m03r/www/castlegreendev.eyesiteview.uk/git/Backend.git
 
+## To create a bare git repo on site ground
+- Clone you repo with --bare tag
+```bash
+git clone --bare you-git-repo-address.git
+```
+
+- Copy your bare git [project_name].git file into the Siteground cli
+
+- Init the git repo on your Siteground
+```bash
+git init --bare --shared
+```
+
+- Now you can clone your project from Siteground
+```bash
+git clone -c"core.sshCommand=ssh -i ./your-ssh-key" ssh://[user-name]@[host-name].uk:[port]/home/[user-name]/www/[domain-name].uk/git/[project-name].git
+```
