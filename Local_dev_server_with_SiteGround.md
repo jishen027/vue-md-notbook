@@ -17,3 +17,12 @@ git init --bare --shared
 ```bash
 git clone -c"core.sshCommand=ssh -i ./your-ssh-key" ssh://[user-name]@[host-name].uk:[port]/home/[user-name]/www/[domain-name].uk/git/[project-name].git
 ```
+
+
+## On your local machine
+```sh
+git remote add production ssh://user-name@host-name:port/path-tu-your-project/project-name.git
+
+git config core.sshCommand "ssh -i ~./your-ssh-key"
+```
+
